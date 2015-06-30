@@ -1,0 +1,8 @@
+<h1> Deck page </h1>
+
+<div id="card-wrapper">
+	<div *ng-for="#card of cards">
+		<img src="{{card}}" /><br>
+		<button class="submit" (click)='delete(card)'>DELETE</button>
+	</div>
+</div>

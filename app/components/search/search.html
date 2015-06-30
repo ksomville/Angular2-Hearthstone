@@ -1,0 +1,24 @@
+<div>
+	<form id="search-form" [ng-form-model]='searchForm'>
+		<h1>Search a card by name</h1>
+		<p>Search a card : <input type='text' ng-control='card'></p>
+		<button class="submit" (click)='onSearch($event)'>SEARCH SINGLE CARD</button>
+	</form><form id="search-spec" [ng-form-model]='searchSpec'>
+		<h1>Search a card with spec</h1>
+		<p>
+			<span>Mana Cost</span>
+			<input type="number" ng-control='mana'>
+			<br>
+			<span>Attack Points</span>
+			<input type="number" ng-control='attack'>
+			<br>
+			<span>Health Points</span>
+			<input type="number" ng-control='health'>
+		</p>
+		<button class="submit" (click)='onSpec($event)'>SEARCH SPECIFICS CARD</button>
+	</form>
+</div>
+<div id="card-wrapper">
+	<div *ng-for="#data of datas"><img src="{{data.img}}" /><br>
+	<button class="submit" (click)='save(data.img)'>ADD TO DECK</button></div>
+</div>
